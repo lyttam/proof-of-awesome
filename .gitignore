@@ -35,5 +35,6 @@ node_modules
 # Vim temp files?
 *.swp
 
-# Vagrant 
 .vagrant/
+dist/
+node_modules

@@ -1,13 +1,8 @@
-var AppComponent = ng.core.Component(
-	{
-		selector: 'my-app',
-		template: '<h1>HAY LAYDEE</h1>'
-	}
-)
-.Class(
-	{
-		constructor: function() {}
-	}
-);
+import template from '../main.html';
+
+let AppComponent = {
+	template,
+	restrict: 'E'
+};
 
 export default AppComponent;
