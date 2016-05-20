@@ -1,15 +1,23 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import ngComponentRouter from '@angular/router/angular1/angular_1_router';
 import Components from './components/components';
-import AppComponent from './components/app.component';
+import AppComponent from './app.component';
 import './styles/main.scss';
 
+console.log(Components.name);
 angular.module('app', [
-		uiRouter,
-		Components.name
+		'ngComponentRouter',
+		'menu',
+		'home',
+		'about'
 	])
+
 	.config(($locationProvider) => {
 		"ngInject";
-		$locationProvider.html5Mode(true).hashPrefix('!');
+		$locationProvider.html5Mode(true);
+			//.hashPrefix('!');
 	})
+
+	.value('$routerRootComponent', 'app')
+
 	.component('app', AppComponent);

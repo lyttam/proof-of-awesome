@@ -10,13 +10,14 @@ let homeModule = angular.module('home', [
 
 		$urlRouterProvider.otherwise('/');
 
-  $stateProvider
-    .state('home', {
-      url: '/',
-      template: '<home></home>'
-    });
-})
+		$stateProvider
+    		.state('home', {
+    			url: '/',
+      			template: '<memu></menu><home></home>'
+    		}
+    	);
+	})
 
-.component('home', homeComponent);
+	.component('home', homeComponent);
 
 export default homeModule;
