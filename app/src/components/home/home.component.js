@@ -1,4 +1,4 @@
-import template from '../error/error.html';
+import template from '../home/home.html';
 
 let homeComponent = {
 	restrict: 'E',

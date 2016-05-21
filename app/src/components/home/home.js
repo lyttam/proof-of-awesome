@@ -2,21 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
 
-let homeModule = angular.module('home', [
-		uiRouter
-	])
-	.config(($stateProvider, $urlRouterProvider) => {
-		"ngInject";
-
-		$urlRouterProvider.otherwise('/');
-
-		$stateProvider
-    		.state('home', {
-    			url: '/',
-      			template: '<memu></menu><home></home>'
-    		}
-    	);
-	})
+let homeModule = angular.module('home', [])
 
 	.component('home', homeComponent);
 
