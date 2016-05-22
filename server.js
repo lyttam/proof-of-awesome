@@ -6,6 +6,10 @@ router.get('/', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
+router.get('/:type(home|about|resume|contact)', function (req, res) {
+  res.sendFile(__dirname + '/dist/index.html');
+});
+
 router.get('/bundle.js', function(req, res) {
 	res.sendFile(__dirname + '/dist/bundle.js');
 });

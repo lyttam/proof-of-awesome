@@ -9,13 +9,15 @@ angular.module('app', [
 		'ngComponentRouter',
 		'menu',
 		'home',
-		'about'
+		'about',
+		'resume',
+		'contact'
 	])
 
 	.config(($locationProvider) => {
 		"ngInject";
-		$locationProvider.html5Mode(true);
-			//.hashPrefix('!');
+		$locationProvider.html5Mode(true)
+			.hashPrefix('!');
 	})
 
 	.value('$routerRootComponent', 'app')

@@ -8,7 +8,9 @@ let menuModule = angular.module('menu', [])
 	.controller('MenuController', ($scope) => {
 		$scope.items = [
 			{ 'label': 'Home' },
-			{ 'label': 'About' }
+			{ 'label': 'About' },
+			{ 'label': 'Resume' },
+			{ 'label': 'Contact' }
 		]
 	});
 
