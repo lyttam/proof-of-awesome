@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm rebuild node-sass && npm install && webpack --progress --colors",
     "prestart": "npm run build",
-    "test": "mocha ./app/test/*.js --compilers js:babel-register --recursive"
+    "test": "mocha app/test/*.js --compilers js:babel-register --recursive"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,14 @@
     "html-webpack-plugin": "^2.16.1",
     "image-webpack-loader": "^1.8.0",
     "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^1.0.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-story-reporter": "^0.3.1",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
     "ng-annotate-loader": "^0.1.0",
     "node-sass": "^3.7.0",
     "raw-loader": "^0.5.1",
