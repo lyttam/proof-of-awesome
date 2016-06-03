@@ -1,47 +1,33 @@
-var webpack = require('webpack');
+var webpackConfig = require('./webpack.config');
+webpackConfig.entry = {};
 
 module.exports = function(config) {
 	
 	config.set({
 		
-		preprocessors: {
-			'app/src/**/*.js': [
-//						 'babel', 
-						 'webpack', 'sourcemap'],
-			'app/test/**/*.js': [
-//						  'babel', 
-						  'webpack', 'sourcemap']
-		},
-
-//		babelPreprocessor: {
-//			options: {
-//				presets: ['es2015'],
-//				sourceMap: 'inline'
-//			},
-//			filename: function(file) {
-//				return file.originalPath.replace(/\.js$/, '.es5.js');
-//			},
-//			sourceFileName: function(file) {
-//				return file.originalPath;
-//			}
-//		},
-
-		webpack: {
-			devtool: 'inline-source-map',
-			module: {
-				loaders: [
-					{ test: /\.js$/, exclude: [/node_modules/], loader: 'babel-loader' }
-				]
-			}
-		},
-
 		basePath: '',
 
+		preprocessors: {
+			'dist/bundle.js': ['webpack'],
+//			'../app/src/**/*.html': ['ng-html2js'],
+			'app/test/**/*.js': ['babel', 'webpack'],
+		},
+
+		webpack: webpackConfig,
+
+		webpackMiddleware: {
+			noInfo: true
+		},
+
 		files: [
+			'node_modules/angular/angular.js',
+			'node_modules/angular-mocks/angular-mocks.js',
+//			'app/src/**/*.html',
+			'dist/bundle.js',
 			'app/test/**/*.js'
 		],
 
-		frameworks: ['mocha'],
+		frameworks: ['mocha', 'chai'],
 
 		browsers: ['Chrome', 'Firefox'],
 

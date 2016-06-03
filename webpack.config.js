@@ -9,7 +9,7 @@ module.exports = {
 		path: __dirname + '/dist',
 		filename: 'bundle.js'
 	},
-//  devtool: 'sourcemap',
+  devtool: 'inline-source-map',
 //  context: __dirname + '/app',
 //  entry: {},
   module: {

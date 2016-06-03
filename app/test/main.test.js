@@ -6,9 +6,9 @@ describe('app module', () => {
 	var $compile,
 		$rootScope;
 
-	beforeEach(angular.module('app'));
+	beforeEach(angular.mock.module('app'));
 
-	beforeEach(inject( (_$compile_, _$rootScope_) => {
+	beforeEach(angular.mock.inject( (_$compile_, _$rootScope_) => {
 		$compile = _$compile_;
 		$rootScope = _$rootScope_;
 	}));
