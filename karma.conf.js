@@ -8,7 +8,7 @@ module.exports = function(config) {
 		basePath: '',
 
 		preprocessors: {
-			'dist/bundle.js': ['webpack'],
+			'app/src/main.js': ['webpack'],
 //			'../app/src/**/*.html': ['ng-html2js'],
 			'app/test/**/*.js': ['babel', 'webpack'],
 		},
@@ -29,7 +29,13 @@ module.exports = function(config) {
 
 		frameworks: ['mocha', 'chai'],
 
-		browsers: ['Chrome', 'Firefox'],
+		browsers: ['Chrome', 'Firefox'
+//		, 'PhantomJS'
+		],
+
+//		phantomjsLauncher: {
+//			exitOnResourceError: true
+//		},
 
 		reporters: ['story']
 	});

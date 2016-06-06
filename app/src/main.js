@@ -4,7 +4,6 @@ import Components from './components/components';
 import AppComponent from './app.component';
 import './styles/main.scss';
 
-console.log(Components.name);
 angular.module('app', [
 		'ngComponentRouter',
 		'menu',

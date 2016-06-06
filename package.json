@@ -4,9 +4,10 @@
   "description": "personal website",
   "main": "server.js",
   "scripts": {
-    "build": "npm rebuild node-sass && npm install && webpack --progress --colors",
+    "prebuild": "npm run test",
     "prestart": "npm run build",
-    "test": "mocha app/test/*.js --compilers js:babel-register --recursive"
+    "build": "npm rebuild node-sass && npm install && webpack --progress --colors",
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -37,12 +38,14 @@
     "karma-firefox-launcher": "^0.1.7",
     "karma-mocha": "^1.0.1",
     "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-story-reporter": "^0.3.1",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
     "ng-annotate-loader": "^0.1.0",
     "node-sass": "^3.7.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
