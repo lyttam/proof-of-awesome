@@ -1,7 +1,6 @@
 /* @ngInject */
-let WindowbarController = ($attrs, $scope) => {
+export default function WindowbarController($attrs, $scope) {
 	let vm = this;
-	vm.title = $scope.$eval($attrs.title.value);
+	vm.title = $scope.$eval($attrs.title).value;
 };
 
-export default WindowbarController;
