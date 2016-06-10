@@ -1,8 +1,9 @@
 import angular from 'angular';
 import aboutComponent from './about.component';
+import commonComponents from '../common/components';
 
-let aboutModule = angular.module('about', [])
-	
+angular.module('about', [
+		'windowbar'
+	])
+
 	.component('about', aboutComponent);
-
-export default aboutModule;

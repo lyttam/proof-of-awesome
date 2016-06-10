@@ -1,0 +1,28 @@
+@mixin flexbox() {
+	display: flex;
+}
+
+@mixin flex-align() {
+	align-items: flex-start;
+}
+
+@mixin menu-item($highlightColor, $inactiveColor, $activeColor) {
+	a {
+		color: $inactiveColor;
+		padding: .5rem 1rem;
+		font-size: 1rem;
+		letter-spacing: .2rem;
+
+		span.shortcut {
+			color: $highlightColor;
+		}
+
+		&:link, &:visited {
+			color: $inactiveColor;
+		}
+
+		&:active, &:hover {
+			color: $activeColor;
+		}
+	}
+}
