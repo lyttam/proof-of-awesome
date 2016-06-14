@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-router.get('/:type(home|about|resume|contact)', function (req, res) {
+router.get('/:type(home|about|experience|skill|contact)', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 

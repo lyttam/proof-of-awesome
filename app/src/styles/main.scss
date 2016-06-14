@@ -1,5 +1,3 @@
-$color-bg: 					#191E1D;
-
 $color-primary: 			#055D56;
 $color-primary-lightest: 	#BDDAD8;
 $color-primary-lighter: 	#019086;
@@ -14,12 +12,19 @@ $color-secondary-light:		#353A39;
 $color-secondary-dark:		#242828;
 $color-secondary-darkest:	#191E1D;
 
+$color-tertiary:			#974608;
+$color-tertiary-lightest:	#FF8F39;
+$color-tertiary-lighter:	#EB6702;
+$color-tertiary-light:		#BA570B;
+$color-tertiary-dark:		#692E00;
+$color-tertiary-darker:		#3E1B00;
+
 @import 'mixins';
 @import 'menu';
 @import 'windowbar';
 
 body {
-	background-color: $color-bg;
+	background-color: $color-secondary-darkest;
 	color: $color-primary-lightest;
 	font-family: monospace;
 
@@ -52,13 +57,54 @@ body {
 			}
 		}
 
-		home {
+		pre {
+			
+			&.banner {
+				font-size: 14px;
+				line-height: 1.3rem;
+				letter-spacing: 0.1rem;
+				font-weight: 700;
+				color: $color-tertiary-light;
+				width: 920px;
+				padding: 1rem;
+				text-align: left;
+			}
 
-			pre {
+			&.error-banner {
+				font-size: 6px;
 				letter-spacing: .2rem;
 				line-height: .3rem;
-				font-size: 6px;
 			}
+		}
+
+		banner {
+			display: block;
+			margin: 1rem 0 5%;
+		}
+
+		home {
+			
+			>div {
+				width: 80%;
+				min-width: 950px;
+				background: $color-primary-dark;
+			}
+		}
+
+		.center-inline {
+			text-align: center;
+		}
+
+		.center-block {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.tagline {
+			font-size: 20px;
+			color: $color-primary-lightest;
+			margin: 0 0 10%;
+			display: inline-block;
 		}
 	}
 }
