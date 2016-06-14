@@ -1,7 +1,6 @@
 import template from './experience.html';
 
 let experienceComponent = {
-	restrict: 'E',
 	template
 };
 

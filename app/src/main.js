@@ -12,7 +12,8 @@ const app = angular.module('app', [
 		'experience',
 		'skill',
 		'contact',
-		'functionMenu'
+		'functionMenu',
+		'styleLibrary'
 	])
 
 	.config(($locationProvider) => {

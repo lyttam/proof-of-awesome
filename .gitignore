@@ -37,6 +37,8 @@ node_modules
 *.swo
 *.swn
 *.swm
+*.swk
+*.swl
 
 .vagrant/
 dist/

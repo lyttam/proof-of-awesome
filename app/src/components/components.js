@@ -6,6 +6,7 @@ import Experience from './experience/experience';
 import Skill from './skill/skill';
 import Contact from './contact/contact';
 import FunctionMenu from './menu/function-menu';
+import StyleLibrary from './style-library/style-library';
 
 let componentModule = angular.module('app.components', [
 		NavMenu.name,
@@ -14,7 +15,8 @@ let componentModule = angular.module('app.components', [
 		Experience.name,
 		Skill.name,
 		Contact.name,
-		FunctionMenu.name
+		FunctionMenu.name,
+		StyleLibrary.name
 ]);
 
 export default componentModule;

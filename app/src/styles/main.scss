@@ -1,24 +1,4 @@
-$color-primary: 			#055D56;
-$color-primary-lightest: 	#BDDAD8;
-$color-primary-lighter: 	#019086;
-$color-primary-light: 		#07726A;
-$color-primary-dark: 		#00413C;
-$color-primary-darkest: 	#002623;
-
-$color-secondary: 			#2C3131;
-$color-secondary-lightest:	#7A8281;
-$color-secondary-lighter:	#404E4D;
-$color-secondary-light:		#353A39;
-$color-secondary-dark:		#242828;
-$color-secondary-darkest:	#191E1D;
-
-$color-tertiary:			#974608;
-$color-tertiary-lightest:	#FF8F39;
-$color-tertiary-lighter:	#EB6702;
-$color-tertiary-light:		#BA570B;
-$color-tertiary-dark:		#692E00;
-$color-tertiary-darker:		#3E1B00;
-
+@import 'colors';
 @import 'mixins';
 @import 'menu';
 @import 'windowbar';
@@ -39,11 +19,30 @@ body {
 			cursor: pointer;
 		}
 
+		.button {
+			@include drop-shadow(.6rem, .4rem, 0, $color-secondary-darkest);
+			@include menu-item($color-tertiary-dark, $color-secondary-dark, $color-secondary-light);
+			background: $color-secondary-lighter;
+			padding: .5rem 2rem;
+			margin: 1rem;
+			display: block;
+			font-size: 1rem;
+			font-weight: 200;
+			letter-spacing: .1rem;
+			white-space: nowrap;
+
+			&.selected {
+				@include drop-shadow(0, 0, 0, $color-secondary-darkest);
+				background: $color-primary-lighter;
+			}
+		}
+
 		.window-container {
 			background-color: $color-secondary-lightest;
 			height: 300px;
 			width: 80%;
 			margin: 0 auto;
+			position: relative;
 			
 			.window-content {
 				background-color: $color-primary-dark;
@@ -86,11 +85,23 @@ body {
 		}
 
 		home {
-			
 			>div {
 				width: 80%;
 				min-width: 950px;
 				background: $color-primary-dark;
+			}
+		}
+
+		experience {
+			.window-content {
+				@include flexbox();
+			}
+		}
+
+		style-library {
+			.window-container .window-content {
+				@include flexbox();
+				max-height: 12rem;
 			}
 		}
 
@@ -109,11 +120,27 @@ body {
 			margin-right: auto;
 		}
 
+		.scrollable {
+			overflow-y: scroll;
+		}
+
 		.tagline {
 			font-size: 20px;
 			color: $color-primary-lightest;
 			margin: 0 0 10%;
 			display: inline-block;
+		}
+
+		.color-palette {
+			@include flexbox();
+			@include flex-align();
+			margin: .5rem 0;
+
+			>div {
+				height: 6rem;
+				width: 3rem;
+				margin: .1rem;
+			}
 		}
 	}
 }

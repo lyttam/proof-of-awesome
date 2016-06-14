@@ -4,35 +4,29 @@ menu {
 
 	nav {
 		height: 100%;
-		@include flexbox;
+		@include flexbox();
 		@include flex-align();
 	}
 }
 
-nav-menu > menu {
+.nav-menu > menu {
 	height: 2rem;
 	
-	nav {
+	nav a {
 		@include menu-item($color-primary, $color-secondary-dark, $color-secondary-light);
-
-		a {
-			padding: .5rem 1rem;
-			font-size: 1rem;
-			letter-spacing: .2rem;
-		}
+		padding: .5rem 1rem;
+		font-size: 1rem;
+		letter-spacing: .2rem;
 	}
 }
 
-function-menu > menu {
+.function-menu > menu {
 	height: 1rem;
 
-	nav {
-		@include menu-item($color-tertiary, $color-secondary-dark, $color-secondary-light);
-
-		a {
-			padding: 0 .5rem;
-			font-size: .8rem;
-			letter-spacing: .1rem;
-		}
+	nav a {
+		@include menu-item($color-tertiary-dark, $color-secondary-dark, $color-secondary-light);
+		padding: 0 .5rem;
+		font-size: .8rem;
+		letter-spacing: .1rem;
 	}
 }

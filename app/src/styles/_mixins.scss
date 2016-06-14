@@ -7,19 +7,23 @@
 }
 
 @mixin menu-item($highlightColor, $inactiveColor, $activeColor) {
-	a {
-		color: $inactiveColor;
-		
-		span.shortcut {
-			color: $highlightColor;
-		}
-
-		&:link, &:visited {
-			color: $inactiveColor;
-		}
-
-		&:active, &:hover {
-			color: $activeColor;
-		}
+	color: $inactiveColor;
+	
+	span.shortcut {
+		color: $highlightColor;
 	}
+
+	&:link, &:visited {
+		color: $inactiveColor;
+	}
+
+	&:active, &:hover {
+		color: $activeColor;
+	}
+}
+
+@mixin drop-shadow($horizOffset, $vertOffset, $radius, $color) {
+	-webkit-box-shadow: $horizOffset $vertOffset $radius $color;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow:    $horizOffset $vertOffset $radius $color;  /* Firefox 3.5 - 3.6 */
+	box-shadow:         $horizOffset $vertOffset $radius $color;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }

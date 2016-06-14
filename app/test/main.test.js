@@ -19,7 +19,7 @@ describe('app module', () => {
 		$rootScope.$digest();
 
 		expect(element.html()).to.have.string('<div class="app">');
-		expect(element.html()).to.have.string('<nav-menu class="ng-isolate-scope">');
+		expect(element.html()).to.have.string('<nav-menu class="nav-menu ng-isolate-scope">');
 		
 		expect(element.html()).to.have.string('href="./"');
 		expect(element.html()).to.have.string('ng-link="[\'Home\']"');
@@ -34,6 +34,6 @@ describe('app module', () => {
 	
 		expect(element.html()).to.have.string('<ng-outlet class="ng-scope"><home');
 
-		expect(element.html()).to.have.string('<function-menu class="ng-isolate-scope">');
+		expect(element.html()).to.have.string('<function-menu class="function-menu ng-isolate-scope">');
 	});
 });
