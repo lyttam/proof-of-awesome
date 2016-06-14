@@ -29,6 +29,9 @@ body {
 	font-family: monospace;
 
 	.app {
+		margin: .5rem;
+		position: relative;
+		height: 100%;
 
 		a {
 			font-weight: 600;
@@ -89,6 +92,12 @@ body {
 				min-width: 950px;
 				background: $color-primary-dark;
 			}
+		}
+
+		footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
 		}
 
 		.center-inline {

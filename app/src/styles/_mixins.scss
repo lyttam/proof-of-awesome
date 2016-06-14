@@ -9,10 +9,7 @@
 @mixin menu-item($highlightColor, $inactiveColor, $activeColor) {
 	a {
 		color: $inactiveColor;
-		padding: .5rem 1rem;
-		font-size: 1rem;
-		letter-spacing: .2rem;
-
+		
 		span.shortcut {
 			color: $highlightColor;
 		}

@@ -6,12 +6,13 @@ import './styles/main.scss';
 
 const app = angular.module('app', [
 		'ngComponentRouter',
-		'menu',
+		'navMenu',
 		'home',
 		'about',
 		'experience',
 		'skill',
-		'contact'
+		'contact',
+		'functionMenu'
 	])
 
 	.config(($locationProvider) => {

@@ -1,12 +1,38 @@
 menu {
-	
 	background: $color-secondary-lightest;
-	height: 2rem;
+	display: block;
 
 	nav {
 		height: 100%;
 		@include flexbox;
 		@include flex-align();
+	}
+}
+
+nav-menu > menu {
+	height: 2rem;
+	
+	nav {
 		@include menu-item($color-primary, $color-secondary-dark, $color-secondary-light);
+
+		a {
+			padding: .5rem 1rem;
+			font-size: 1rem;
+			letter-spacing: .2rem;
+		}
+	}
+}
+
+function-menu > menu {
+	height: 1rem;
+
+	nav {
+		@include menu-item($color-tertiary, $color-secondary-dark, $color-secondary-light);
+
+		a {
+			padding: 0 .5rem;
+			font-size: .8rem;
+			letter-spacing: .1rem;
+		}
 	}
 }
