@@ -4,7 +4,7 @@
   "description": "personal website",
   "main": "server.js",
   "scripts": {
-    "prestart": "npm run build",
+    "prestart": "npm run build && npm run test",
     "build": "npm rebuild node-sass && npm install && webpack --progress --colors",
     "test": "karma start --single-run"
   },

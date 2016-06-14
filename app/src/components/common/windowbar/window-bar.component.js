@@ -4,10 +4,10 @@ import WindowbarController from './windowbar.controller';
 let windowbarComponent = {
 	template,
 	restrict: 'E',
-	controller: ['$attrs', '$scope', WindowbarController],
+	controller: ['$scope', WindowbarController],
 	controllerAs: 'windowbar',
-	scope: {
-		title: '='
+	bindings: {
+		title: '@'
 	}
 };
 
