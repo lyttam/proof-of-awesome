@@ -16,7 +16,13 @@ module.exports = {
     loaders: [
         { test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel' },
         { test: /\.html$/, loader: 'raw' },
-		{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
+		{ 
+			test: /\.(eot|svg|ttf|woff|woff2)\?93041340$/, 
+			loader: 'file', 
+			query: { name: '[name].[ext]' }
+		},
+		{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
+		{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') }
 	]
   },
   plugins: [

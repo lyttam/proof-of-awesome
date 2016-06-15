@@ -1,23 +1,24 @@
-$color-primary: 			#055D56;
-$color-primary-lightest: 	#BDDAD8;
-$color-primary-lighter: 	#019086;
-$color-primary-light: 		#07726A;
-$color-primary-dark: 		#00413C;
-$color-primary-darkest: 	#002623;
+$color-primary: 			#00D5D5;
+$color-primary-lightest: 	#8BFCFC;
+/*$color-primary-lighter: 	#4FDDDD;*/
+$color-primary-light: 		#5AF1F1;
+$color-primary-dark: 		#006363;
+$color-primary-darkest: 	#003131;
 
-$color-secondary: 			#2C3131;
-$color-secondary-lightest:	#7A8281;
-$color-secondary-lighter:	#404E4D;
-$color-secondary-light:		#353A39;
-$color-secondary-dark:		#242828;
-$color-secondary-darkest:	#191E1D;
+$color-secondary: 			#757575;
+$color-secondary-lightest:	#FFFCFB;
+/*$color-secondary-lighter:	#9F9F9F;*/
+$color-secondary-light:		#B1B1B1;
+$color-secondary-dark:		#484848;
+/*$color-secondary-darker:	#343636;*/
+$color-secondary-darkest:	#212121;
 
-$color-tertiary:			#974608;
-$color-tertiary-lightest:	#FF8F39;
-$color-tertiary-lighter:	#EB6702;
-$color-tertiary-light:		#BA570B;
-$color-tertiary-dark:		#692E00;
-$color-tertiary-darker:		#3E1B00;
+$color-tertiary:			#FF7604;
+$color-tertiary-lightest:	#FFBF8A;
+/*$color-tertiary-lighter:	#EB6702;*/
+$color-tertiary-light:		#FFAA64;
+$color-tertiary-dark:		#974500;
+$color-tertiary-darkest:	#662E00;
 
 .color-1 {
 	background: $color-primary;
@@ -25,9 +26,9 @@ $color-tertiary-darker:		#3E1B00;
 .color-1-a {
 	background: $color-primary-lightest;
 }
-.color-1-b {
+/*.color-1-b {
 	background: $color-primary-lighter;
-}
+}*/
 .color-1-c {
 	background: $color-primary-light;
 }
@@ -47,9 +48,9 @@ $color-tertiary-darker:		#3E1B00;
 .color-2-a {
 	background: $color-secondary-lightest;
 }
-.color-2-b {
+/*.color-2-b {
 	background: $color-secondary-lighter;
-}
+}*/
 .color-2-c {
 	background: $color-secondary-light;
 }
@@ -69,18 +70,18 @@ $color-tertiary-darker:		#3E1B00;
 .color-3-a {
 	background: $color-tertiary-lightest;
 }
-.color-3-b {
+/*.color-3-b {
 	background: $color-tertiary-lighter;
-}
+}*/
 .color-3-c {
 	background: $color-tertiary-light;
 }
 .color-3-d {
 	background: $color-tertiary-dark;
 }
-.color-3-e {
+/*.color-3-e {
 	background: $color-tertiary-darker;
-}
-/*.color-3-f {
-	background: $color-tertiary-darkest;
 }*/
+.color-3-f {
+	background: $color-tertiary-darkest;
+}

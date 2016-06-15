@@ -4,14 +4,13 @@
 @import 'windowbar';
 
 body {
-	background-color: $color-secondary-darkest;
+	background-color: $color-secondary-dark;
 	color: $color-primary-lightest;
 	font-family: monospace;
 
 	.app {
 		margin: .5rem;
 		position: relative;
-		height: 100%;
 
 		a {
 			font-weight: 600;
@@ -21,8 +20,8 @@ body {
 
 		.button {
 			@include drop-shadow(.6rem, .4rem, 0, $color-secondary-darkest);
-			@include menu-item($color-tertiary-dark, $color-secondary-dark, $color-secondary-light);
-			background: $color-secondary-lighter;
+			@include menu-item($color-tertiary-dark, $color-secondary-dark, $color-secondary);
+			background: $color-secondary-light;
 			padding: .5rem 2rem;
 			margin: 1rem;
 			display: block;
@@ -30,14 +29,24 @@ body {
 			font-weight: 200;
 			letter-spacing: .1rem;
 			white-space: nowrap;
+			text-align: center;
 
 			&.selected {
 				@include drop-shadow(0, 0, 0, $color-secondary-darkest);
-				background: $color-primary-lighter;
+				background: $color-primary-light;
+			}
+
+			&:hover, :focus {
+				.focus {
+					padding: .2rem 2rem;
+					display: inline;
+					border: 1px dotted $color-secondary-darkest;
+				}
 			}
 		}
 
 		.window-container {
+			@include drop-shadow(1rem, .7rem, 0, $color-secondary-darkest);
 			background-color: $color-secondary-lightest;
 			height: 300px;
 			width: 80%;
@@ -46,7 +55,7 @@ body {
 			
 			.window-content {
 				background-color: $color-primary-dark;
-			    height: 88%;
+			    height: 92%;
 			    width: 99.5%;
     			margin: 0 auto;
 
@@ -93,7 +102,7 @@ body {
 		}
 
 		experience {
-			.window-content {
+			.window-container .window-content {
 				@include flexbox();
 			}
 		}
@@ -101,7 +110,6 @@ body {
 		style-library {
 			.window-container .window-content {
 				@include flexbox();
-				max-height: 12rem;
 			}
 		}
 
@@ -122,6 +130,25 @@ body {
 
 		.scrollable {
 			overflow-y: scroll;
+			
+			&::-webkit-scrollbar {
+				width: 1rem;
+			}
+			&::-webkit-scrollbar-track-piece {
+				background-color: $color-secondary;
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: $color-secondary-light;
+				border: .1rem solid $color-secondary-dark;
+			}
+/*			&::-webkit-scrollbar-button:end {
+				display: block;
+			}
+			&::-webkit-scrollbar-button:start {
+				display: block;
+				background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path transform='scale(0.2) translate(0 200)' d='M760 366l-380-380-380 380 192 0 0 350 376 0 0-350 192 0z'/></svg>"); 
+*//*				background-image: url("data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxtZXRhZGF0YT5Db3B5cmlnaHQgKEMpIDIwMTYgYnkgb3JpZ2luYWwgYXV0aG9ycyBAIGZvbnRlbGxvLmNvbTwvbWV0YWRhdGE+CjxkZWZzPgo8Zm9udCBpZD0iZm9udGVsbG8iIGhvcml6LWFkdi14PSIxMDAwIiA+Cjxmb250LWZhY2UgZm9udC1mYW1pbHk9ImZvbnRlbGxvIiBmb250LXdlaWdodD0iNDAwIiBmb250LXN0cmV0Y2g9Im5vcm1hbCIgdW5pdHMtcGVyLWVtPSIxMDAwIiBhc2NlbnQ9Ijg1MCIgZGVzY2VudD0iLTE1MCIgLz4KPG1pc3NpbmctZ2x5cGggaG9yaXotYWR2LXg9IjEwMDAiIC8+CjxnbHlwaCBnbHlwaC1uYW1lPSJkb3duLWJvbGQiIHVuaWNvZGU9IiYjeGU4MDA7IiBkPSJNNzYwIDM2NmwtMzgwLTM4MC0zODAgMzgwIDE5MiAwIDAgMzUwIDM3NiAwIDAtMzUwIDE5MiAweiIgaG9yaXotYWR2LXg9Ijc2MCIgLz4KCjxnbHlwaCBnbHlwaC1uYW1lPSJ1cC1ib2xkIiB1bmljb2RlPSImI3hlODAxOyIgZD0iTTc2MCAzMzZsLTE5MiAwIDAtMzUwLTM3NiAwIDAgMzUwLTE5MiAwIDM4MCAzODB6IiBob3Jpei1hZHYteD0iNzYwIiAvPgoKPGdseXBoIGdseXBoLW5hbWU9ImxlZnQtZGlyIiB1bmljb2RlPSImI3hlODAyOyIgZD0iTTM1NyA2MDB2LTUwMHEwLTE0LTEwLTI1dC0yNi0xMS0yNSAxMWwtMjUwIDI1MHEtMTAgMTEtMTAgMjV0MTAgMjVsMjUwIDI1MHExMSAxMSAyNSAxMXQyNi0xMSAxMC0yNXoiIGhvcml6LWFkdi14PSIzNTcuMSIgLz4KCjxnbHlwaCBnbHlwaC1uYW1lPSJyaWdodC1kaXIiIHVuaWNvZGU9IiYjeGU4MDM7IiBkPSJNMzIxIDM1MHEwLTE0LTEwLTI1bC0yNTAtMjUwcS0xMS0xMS0yNS0xMXQtMjUgMTEtMTEgMjV2NTAwcTAgMTUgMTEgMjV0MjUgMTEgMjUtMTFsMjUwLTI1MHExMC0xMCAxMC0yNXoiIGhvcml6LWFkdi14PSIzNTcuMSIgLz4KPC9mb250Pgo8L2RlZnM+Cjwvc3ZnPg=="); */
+/*			}*/
 		}
 
 		.tagline {
