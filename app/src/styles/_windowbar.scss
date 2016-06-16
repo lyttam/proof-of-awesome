@@ -1,6 +1,7 @@
 header {
 	@include flexbox();
 	justify-content: space-between;
+	background-color: $color-secondary-lightest;
 
 	a {
 		@include drop-shadow(.03rem, .03rem, 0, $color-secondary-dark);
