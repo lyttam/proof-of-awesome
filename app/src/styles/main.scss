@@ -93,6 +93,30 @@ body {
 
 		section {
 			padding: .5rem 1rem;
+
+			&.titled {
+				padding: 0;
+				border: none;
+
+				>header {
+					padding: 0 1rem;
+					background-color: $color-secondary-lightest;
+
+					h2 {
+						color: $color-primary-darkest;
+						font-weight: 100;
+						font-size: .8rem;
+						letter-spacing: .08rem;
+						margin: .2rem;
+					}
+				}
+
+				>div {
+					padding: .5rem 1rem;
+					border: 2px solid $color-primary-lightest;
+					border-top: none;
+				}
+			}
 		}
 
 		ul.picker {
@@ -130,6 +154,24 @@ body {
 		experience {
 			.window-container .window-content {
 				@include flexbox();
+
+				nav {
+					height: 7rem;
+					padding: 2rem 0 1rem 0;
+
+					a.button {
+						max-width: 20rem;
+					}
+				}
+
+				ul.picker {
+					height: 9rem;
+					display: block;
+				}
+
+				section.titled>div {
+					height: 16.8rem;
+				}
 			}
 		}
 
@@ -143,6 +185,10 @@ body {
 			position: absolute;
 			bottom: 0;
 			width: 100%;
+		}
+
+		.hide {
+			display: none !important;
 		}
 
 		.center-inline {

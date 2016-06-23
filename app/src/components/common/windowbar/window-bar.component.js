@@ -3,7 +3,6 @@ import WindowbarController from './windowbar.controller';
 
 let windowbarComponent = {
 	template,
-	restrict: 'E',
 	controller: ['$scope', WindowbarController],
 	controllerAs: 'windowbar',
 	bindings: {
