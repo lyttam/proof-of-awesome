@@ -21,6 +21,7 @@ module.exports = {
 			loader: 'file', 
 			query: { name: '[name].[ext]' }
 		},
+		{ test: /\.svg/, loader: 'svg-url-loader' },
 		{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
 		{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') }
 	]

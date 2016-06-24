@@ -1,0 +1,69 @@
+/* https://worldvectorlogo.com */
+
+$prefix: logo;
+
+/* svg filename, width, height */
+$logos: (
+	ajax		397.5	191.25,
+	angular 	512		139,
+	cakephp		256		255,
+	css3		538.584	538.583,
+	db2			300		300,
+	es6			256		256,
+	flux		256		102,
+	git			256		108,
+	grunt		360		424,
+	html5		440 	621.061,
+	jasmine		629.46	146.469,
+	java		290.829 540.906,
+	javascript	256		256,
+	jira		512 	200,
+	jquery		512		116,
+	karma		256		198,
+	less		256 	110,
+	mocha		256		256,
+	mysql		192.756 192.756,
+	node		256		282,
+	npm			256		100,
+	php			256		134,
+	pivotal-tracker	256	256,
+	q			256 	295,
+	react		256 	230,
+	sass		512		384,
+	spring		256 	254
+);
+
+.logo-tiles {
+	display: flex !important;
+	flex-wrap: wrap;
+	background-color: $color-secondary;
+	
+	tile {
+		width: 5rem;
+		height: 5rem;
+		position: relative;
+		margin: 0 .2rem 1rem .2rem;
+		color: $color-secondary;
+
+		>div {
+			position: absolute;
+			width: 100%;
+			background-size: cover;
+			background-color: $color-secondary;
+			height: 0;
+			padding: 0; /* reset */
+			top: 50%;
+			transform: translateY(-50%);
+		
+			@each $item in $logos {
+				
+				$aspect-ratio: nth($item, 3) / nth($item, 2);
+
+				&.#{$prefix}-#{nth($item, 1)} {
+					background-image: url(img/#{nth($item, 1)}.svg);
+					padding-bottom: 100% * $aspect-ratio; 
+				}
+			}
+		}
+	}
+}

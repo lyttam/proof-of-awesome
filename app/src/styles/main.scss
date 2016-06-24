@@ -3,6 +3,7 @@
 @import 'layout';
 @import 'menu';
 @import 'windowbar';
+@import 'images';
 
 body {
 	background-color: $color-secondary-dark;
@@ -172,6 +173,12 @@ body {
 				section.titled>div {
 					height: 16.8rem;
 				}
+			}
+		}
+
+		skill {
+			.window-container .window-content {
+				@include flexbox();
 			}
 		}
 
