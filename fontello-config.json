@@ -29,6 +29,18 @@
       "css": "right-dir",
       "code": 59395,
       "src": "fontawesome"
+    },
+    {
+      "uid": "4c4bb0011585456def6562bf27186b63",
+      "css": "folder-empty",
+      "code": 59396,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "8f28e6daf83e5c4f1fec8d170a7e21e7",
+      "css": "folder-open-empty",
+      "code": 59397,
+      "src": "mfglabs"
     }
   ]
 }

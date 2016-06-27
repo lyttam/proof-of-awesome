@@ -192,6 +192,11 @@ body {
 		style-library {
 			.window-container .window-content {
 				@include flexbox();
+				flex-wrap: wrap;
+
+				.expander {
+					height: 80px;
+				}
 			}
 		}
 
@@ -226,6 +231,40 @@ body {
 			&::-webkit-scrollbar-thumb {
 				background-color: $color-secondary-light;
 				border: .1rem solid $color-secondary-dark;
+			}
+		}
+
+		.expander {
+			position: relative;
+			
+			.toggle {
+
+				h3 {
+					display: inline-block;
+					position: absolute;
+					top: 0;
+					left: 2rem;
+					margin: 0;
+				}
+
+				.closed {
+					display: inline-block;
+				}
+
+				.open {
+					display: none;
+				}
+
+				&:hover {
+
+					.closed {
+						display: none;
+					}
+
+					.open {
+						display: inline-block;
+					}	
+				}
 			}
 		}
 

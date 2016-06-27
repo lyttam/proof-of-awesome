@@ -20,8 +20,12 @@ router.get('/main.css', function(req, res) {
 
 router.get('/img/:file', function(req, res) {
 	var file = req.params.file;
-	console.log(file);
 	res.sendFile(__dirname + '/app/styles/img/' + file);
+});
+
+router.get('/fontello.:ext', function(req, res) {
+	var ext = req.params.ext;
+	res.sendFile(__dirname + '/dist/fontello.' + ext);
 });
 
 app.listen(3000, function () {
