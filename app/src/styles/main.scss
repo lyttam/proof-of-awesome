@@ -112,29 +112,33 @@ body {
 					}
 				}
 
-				>div {
+				>div, ul {
 					padding: .5rem 1rem;
 					border: 2px solid $color-primary-lightest;
 					border-top: none;
+					margin: 0;
 				}
 			}
 		}
 
-		ul.picker {
+		ul {
 			list-style: none;
 			padding: 0 0 0 .8rem;
-			color: $color-secondary-lightest;
 
-			li {
-				&.selected {
-					background-color: $color-secondary-darkest;
-				}
+			&.picker {
+				color: $color-secondary-lightest;
 
-				a {
-					font-weight: 400;
-					padding: 0 1rem;
-					letter-spacing: .1rem;
-					line-height: 1.2rem;
+				li {
+					&.selected {
+						background-color: $color-secondary-darkest;
+					}
+
+					a {
+						font-weight: 400;
+						padding: 0 1rem;
+						letter-spacing: .1rem;
+						line-height: 1.2rem;
+					}
 				}
 			}
 		}
@@ -178,7 +182,10 @@ body {
 
 		skill {
 			.window-container .window-content {
-				@include flexbox();
+				section {
+					width: 92%;
+					display: block;
+				}
 			}
 		}
 

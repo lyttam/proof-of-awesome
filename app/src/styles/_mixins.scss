@@ -27,3 +27,15 @@
 	-moz-box-shadow:    $horizOffset $vertOffset $radius $color;  /* Firefox 3.5 - 3.6 */
 	box-shadow:         $horizOffset $vertOffset $radius $color;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
+
+@mixin opacity($opacity) {
+	filter: alpha(opacity=$opacity*10); /* IE */
+	-moz-opacity: $opacity; /* Mozilla */
+	opacity: $opacity; /* CSS3 */
+}
+
+@mixin text-format($size, $weight) {
+	font-size: $size;
+	letter-spacing: $size / 10;
+	font-weight: $weight;
+}

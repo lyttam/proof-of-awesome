@@ -4,6 +4,7 @@ $prefix: logo;
 
 /* svg filename, width, height */
 $logos: (
+	agile		192.756 192.756,
 	ajax		397.5	191.25,
 	angular 	512		139,
 	cakephp		256		255,
@@ -13,9 +14,9 @@ $logos: (
 	flux		256		102,
 	git			256		108,
 	grunt		360		424,
-	html5		440 	621.061,
+	html5		512		512,
 	jasmine		629.46	146.469,
-	java		290.829 540.906,
+	java		354.346	659.055,
 	javascript	256		256,
 	jira		512 	200,
 	jquery		512		116,
@@ -23,10 +24,9 @@ $logos: (
 	less		256 	110,
 	mocha		256		256,
 	mysql		192.756 192.756,
-	node		256		282,
+	node		512 	145,
 	npm			256		100,
 	php			256		134,
-	pivotal-tracker	256	256,
 	q			256 	295,
 	react		256 	230,
 	sass		512		384,
@@ -36,20 +36,20 @@ $logos: (
 .logo-tiles {
 	display: flex !important;
 	flex-wrap: wrap;
-	background-color: $color-secondary;
+	background-color: $color-secondary-light;
 	
 	tile {
-		width: 5rem;
-		height: 5rem;
+		width: 6rem;
+		height: 6rem;
 		position: relative;
-		margin: 0 .2rem 1rem .2rem;
-		color: $color-secondary;
+		margin: 0 .4rem 1rem .4rem;
+		color: $color-secondary-light;
 
 		>div {
 			position: absolute;
 			width: 100%;
 			background-size: cover;
-			background-color: $color-secondary;
+			background-color: $color-secondary-light;
 			height: 0;
 			padding: 0; /* reset */
 			top: 50%;
@@ -63,6 +63,23 @@ $logos: (
 					background-image: url(img/#{nth($item, 1)}.svg);
 					padding-bottom: 100% * $aspect-ratio; 
 				}
+			}
+		}
+
+		>span {
+			display: none;
+
+			&:hover {
+				@include opacity(.9);
+				@include text-format(.8rem, 700);
+				display: block;
+				position: absolute;
+				top: 2rem;
+				left: 10%;
+				z-index: 100;
+				background-color: $color-secondary-dark;
+				color: $color-tertiary;
+				padding: .3rem 1rem;
 			}
 		}
 	}
