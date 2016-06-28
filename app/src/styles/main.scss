@@ -157,34 +157,55 @@ body {
 		}
 
 		experience {
-			.window-container .window-content {
-				@include flexbox();
+			.window-container { 
+				min-height: 360px;
+			
+				.window-content {
+					@include flexbox();
 
-				nav {
-					height: 7rem;
-					padding: 2rem 0 1rem 0;
+					nav {
+						height: 7rem;
+						padding: 2rem 0 1rem 0;
 
-					a.button {
-						max-width: 20rem;
+						a.button {
+							max-width: 20rem;
+						}
 					}
-				}
 
-				ul.picker {
-					height: 9rem;
-					display: block;
-				}
+					ul.picker {
+						height: 9rem;
+						display: block;
+					}
 
-				section.titled>div {
-					height: 16.8rem;
+					section.titled>div {
+						height: 16.8rem;
+					}
 				}
 			}
 		}
 
 		skill {
-			.window-container .window-content {
-				section {
-					width: 92%;
-					display: block;
+			.window-container {
+				min-height: 430px;
+
+				.window-content {
+					section {
+						width: 98%;
+						display: block;
+					}
+
+					ul {
+						display: flex;
+						justify-content: space-around;
+						flex-wrap: wrap;
+						color: $color-secondary-dark;
+						background-color: $color-primary-light;
+
+						li.expander {
+							width: 18rem;
+							margin: 1rem 0;
+						}
+					}
 				}
 			}
 		}
@@ -238,13 +259,20 @@ body {
 			position: relative;
 			
 			.toggle {
+				cursor: pointer;
 
 				h3 {
+					@include text-format(1.2rem, 400);
 					display: inline-block;
 					position: absolute;
 					top: 0;
-					left: 2rem;
+					left: 3rem;
 					margin: 0;
+					line-height: 2rem;
+				}
+
+				i {
+					font-size: 1.5rem
 				}
 
 				.closed {
@@ -253,10 +281,21 @@ body {
 
 				.open {
 					display: none;
+
+					>div {
+						@include opacity(.9);
+						@include text-format(.8rem, 400);
+						position: fixed;
+						z-index: 100;
+						background-color: $color-secondary-darkest;
+						color: $color-tertiary;
+						padding: .5rem 1rem;
+						margin: 0 2.3rem;
+						width: 400px;
+					}
 				}
 
 				&:hover {
-
 					.closed {
 						display: none;
 					}
