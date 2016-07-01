@@ -10,20 +10,32 @@ module.exports = {
 		filename: 'bundle.js'
 	},
   devtool: 'inline-source-map',
-//  context: __dirname + '/app',
-//  entry: {},
   module: {
     loaders: [
         { test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel' },
         { test: /\.html$/, loader: 'raw' },
 		{ 
-			test: /\.(eot|svg|ttf|woff|woff2)\?66782724$/, 
+			test: /\.(eot|svg|ttf|woff|woff2)\?43908530$/, 
 			loader: 'file', 
 			query: { name: '[name].[ext]' }
 		},
 		{ test: /\.svg/, loader: 'svg-url-loader' },
-		{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
+		{ 
+			test: /\.png$/, loader: 'file', 
+			include: path.join(__dirname, 'app/src/styles/img'), 
+			query: {name: 'img/[name].[ext]' }
+			//loaders: [
+			//	'file?hash=sha512&digest=hex&name=[hash].[ext]',
+			//	'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+			//]
+		},
+		{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap') },
 		{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') }
+	]
+  },
+  resolveLoader: {
+	root: [
+		path.resolve(path.join(__dirname, 'dist'))
 	]
   },
   plugins: [

@@ -2,6 +2,9 @@ import angular from 'angular';
 import ngComponentRouter from '@angular/router/angular1/angular_1_router';
 import Components from './components/components';
 import AppComponent from './app.component';
+import './styles/img/8bit-linkedin.png';
+import './styles/img/8bit-gmail.png';
+import './styles/img/8bit-github.png';
 import './styles/main.scss';
 import './styles/css/fontello.css';
 

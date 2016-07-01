@@ -39,3 +39,9 @@
 	letter-spacing: $size / 10;
 	font-weight: $weight;
 }
+
+@mixin align-vertical($justify) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $justify;
+}

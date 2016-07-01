@@ -20,7 +20,7 @@ router.get('/main.css', function(req, res) {
 
 router.get('/img/:file', function(req, res) {
 	var file = req.params.file;
-	res.sendFile(__dirname + '/app/styles/img/' + file);
+	res.sendFile(__dirname + '/dist/img/' + file);
 });
 
 router.get('/fontello.:ext', function(req, res) {

@@ -1,6 +1,5 @@
 /* https://worldvectorlogo.com */
-
-$prefix: logo;
+/* https://www.iconfinder.com */
 
 /* svg filename, width, height */
 $logos: (
@@ -33,16 +32,39 @@ $logos: (
 	spring		256 	254
 );
 
-.logo-tiles {
+$social-media-icons: (
+	linkedin,
+	gmail,
+	github
+);
+
+.logo-tiles, .social-media {
 	display: flex !important;
 	flex-wrap: wrap;
 	justify-content: space-around;
+
+	tile {
+		position: relative;
+
+		>span {
+			@include opacity(.9);
+			@include text-format(.8rem, 700);
+			display: none;
+			position: absolute;
+			z-index: 100;
+			background-color: $color-secondary-darkest;
+			color: $color-tertiary;
+
+		}
+	}
+}
+
+.logo-tiles {
 	background-color: $color-secondary-light;
 	
 	tile {
 		width: 3.5rem;
 		height: 4rem;
-		position: relative;
 		margin: 0 .4rem 1rem .4rem;
 		color: $color-secondary-light;
 
@@ -60,34 +82,93 @@ $logos: (
 				
 				$aspect-ratio: nth($item, 3) / nth($item, 2);
 
-				&.#{$prefix}-#{nth($item, 1)} {
+				&.logo-#{nth($item, 1)} {
 					background-image: url(img/#{nth($item, 1)}.svg);
 					padding-bottom: 100% * $aspect-ratio; 
 				}
 			}
 		}
-
 		>span {
-			@include opacity(.9);
-			@include text-format(.8rem, 700);
-			display: none;
 			width: 6rem;
 			height: 100%;
-			position: absolute;
 			top: 0;
 			left: -1.2rem;
-			z-index: 100;
-			background-color: $color-secondary-darkest;
-			color: $color-tertiary;
-
 		}
 		&:hover {
 			>span {
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
+				@include align-vertical(center);
 				cursor: help;
 			}
+		}
+	}
+}
+
+.social-media {
+	padding: 0 8rem;
+
+	li {
+		display: inherit;
+		position: relative;
+
+		&:hover {
+			tile>span, a, input {
+				display: block;
+			}
+		}
+
+		tile {
+
+			>div {
+				height: 100px;
+				width: 100px;
+				@include drop-shadow(.8rem, .8rem, 0, $color-secondary-darkest);
+
+				@each $item in $social-media-icons {
+					&.#{$item} {
+						background-image: url(~/img/8bit-#{$item}.png); 
+					}
+				}
+			}
+			>span {
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+		}
+		
+		a {
+			display: none;
+			z-index: 101;
+
+			&:link, &:visited {
+				color: $color-tertiary;
+			}
+
+			&:hover, &:active {
+				color: $color-tertiary-light;
+			}
+
+			i {
+				display: inherit;
+				@include text-format(1rem, 700);
+				position: absolute;
+				top: 40%;
+				left: 40%;
+			}
+		}
+
+		input {
+			display: none;
+			width: 90%;
+			height: 1.4rem;
+			position: absolute;
+			top: 60%;
+			left: 5%;
+			z-index: 101;
+			cursor: text;
+			background-color: $color-secondary-lightest;
+			border-color: $color-secondary;
 		}
 	}
 }
