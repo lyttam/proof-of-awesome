@@ -8,7 +8,7 @@ let navMenuModule = angular.module('navMenu', [])
 	.controller('NavMenuController', ($scope) => {
 		$scope.items = [
 			{ 'label': 'Home' },
-			{ 'label': 'About' },
+//			{ 'label': 'About' },
 			{ 'label': 'Experience' },
 			{ 'label': 'Skill' },
 			{ 'label': 'Contact' }

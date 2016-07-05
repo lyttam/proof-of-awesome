@@ -23,8 +23,8 @@ describe('app module', () => {
 		
 		expect(element.html()).to.have.string('href="./"');
 		expect(element.html()).to.have.string('ng-link="[\'Home\']"');
-		expect(element.html()).to.have.string('href="./about/"');
-		expect(element.html()).to.have.string('ng-link="[\'About\']"');
+//		expect(element.html()).to.have.string('href="./about/"');
+//		expect(element.html()).to.have.string('ng-link="[\'About\']"');
 		expect(element.html()).to.have.string('href="./experience/"');
 		expect(element.html()).to.have.string('ng-link="[\'Experience\']"');
 		expect(element.html()).to.have.string('href="./skill/"');
