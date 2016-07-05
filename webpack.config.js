@@ -15,7 +15,7 @@ module.exports = {
         { test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel' },
         { test: /\.html$/, loader: 'raw' },
 		{ 
-			test: /\.(eot|svg|ttf|woff|woff2)\?43908530$/, 
+			test: /\.(eot|svg|ttf|woff|woff2)\?56386607$/, 
 			loader: 'file', 
 			query: { name: '[name].[ext]' }
 		},
@@ -46,7 +46,8 @@ module.exports = {
      template: 'app/index.html',
       inject: 'body',
     //  hash: true
-      hash: false
+      hash: false,
+      favicon: 'app/src/styles/img/favicon.ico'
     }),
 
     new ExtractTextPlugin('[name].css')

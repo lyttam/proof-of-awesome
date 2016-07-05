@@ -23,6 +23,10 @@ router.get('/img/:file', function(req, res) {
 	res.sendFile(__dirname + '/dist/img/' + file);
 });
 
+router.get('/favicon.ico', function(req, res) {
+	res.sendFile(__dirname + '/dist/favicon.ico');
+});
+
 router.get('/fontello.:ext', function(req, res) {
 	var ext = req.params.ext;
 	res.sendFile(__dirname + '/dist/fontello.' + ext);

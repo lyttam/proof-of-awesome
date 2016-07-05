@@ -1,7 +1,7 @@
 
 .icon-down-bold:before { content: '\e800'; } /* '' */
 .icon-up-bold:before { content: '\e801'; } /* '' */
-.icon-left-dir:before { content: '\e802'; } /* '' */
-.icon-right-dir:before { content: '\e803'; } /* '' */
 .icon-link-ext:before { content: '\e804'; } /* '' */
 .icon-docs:before { content: '\e805'; } /* '' */
+.icon-folder-empty:before { content: '\f069'; } /* '' */
+.icon-folder-open-empty:before { content: '\f4c2'; } /* '' */
