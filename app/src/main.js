@@ -1,5 +1,6 @@
 import angular from 'angular';
 import ngComponentRouter from '@angular/router/angular1/angular_1_router';
+import 'babel-polyfill';
 import Components from './components/components';
 import AppComponent from './app.component';
 import './styles/img/8bit-linkedin.png';

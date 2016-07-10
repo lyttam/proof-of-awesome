@@ -9,7 +9,6 @@ export default function ExperienceController($scope, $element, $attrs) {
 	}
 
 	vm.selectCareer = (career) => {
-		console.log(career);
 		vm.career = career;
 	}
 };

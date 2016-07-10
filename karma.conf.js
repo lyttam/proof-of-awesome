@@ -8,8 +8,8 @@ module.exports = function(config) {
 		basePath: '',
 
 		preprocessors: {
-			'app/src/main.js': ['webpack'],
-//			'dist/bundle.js': ['webpack'],
+//			'app/src/main.js': ['webpack'],
+	//		'dist/bundle.js': ['webpack'],
 //			'../app/src/**/*.html': ['ng-html2js'],
 			'app/test/**/*.js': ['babel', 'webpack'],
 		},
@@ -19,6 +19,17 @@ module.exports = function(config) {
 		webpackMiddleware: {
 			noInfo: true
 		},
+
+		plugins: [
+			require('karma-webpack'),
+			require('karma-babel-preprocessor'),
+			require('karma-mocha'),
+			require('karma-chai'),
+			require('karma-chrome-launcher'),
+			require('karma-firefox-launcher'),
+			require('karma-phantomjs-launcher'),
+			require('karma-story-reporter')
+		],
 
 		files: [
 			'node_modules/angular/angular.js',
@@ -31,13 +42,15 @@ module.exports = function(config) {
 
 		frameworks: ['mocha', 'chai'],
 
-		browsers: ['Chrome', 'Firefox'
-//		, 'PhantomJS'
+		browsers: [
+//			'Chrome', 
+//			'Firefox',
+			'PhantomJS'
 		],
 
-//		phantomjsLauncher: {
-//			exitOnResourceError: true
-//		},
+		phantomjsLauncher: {
+			exitOnResourceError: true
+		},
 
 		reporters: ['story']
 	});
