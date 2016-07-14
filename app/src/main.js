@@ -31,19 +31,19 @@ const app = angular.module('app', [
 		$stateProvider
 			.state('home', {
 				url: '/',
-				template: homeTemplate 
+				component: 'home'
 			})
 			.state('experience', {
 				url: '/experience',
-				template: experienceTemplate 
+				component: 'experience'
 			})
 			.state('skill', {
 				url: '/skill',
-				template: skillTemplate 
+				component: 'skill'
 			})
 			.state('contact', {
 				url: '/contact',
-				template: contactTemplate
+				component: 'contact'
 			});
 	}])
 
