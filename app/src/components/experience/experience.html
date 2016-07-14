@@ -3,59 +3,59 @@
 	<div class="window-content">
 		<div class="width-single">
 			<nav>
-				<a class="button center-block {{ experience.showCareer ? 'selected' : '' }}" ng-click="experience.toggleCareer(true)" tabindex="0">(<span class="shortcut">1</span>) Career</a>
-				<a class="button center-block {{ experience.showCareer ? '' : 'selected' }}" ng-click="experience.toggleCareer()" tabindex="0">(<span class="shortcut">2</span>) Education</a>
+				<a class="button center-block {{ showCareer ? 'selected' : '' }}" ng-click="experience.toggleCareer(true)" tabindex="0">(<span class="shortcut">1</span>) Career</a>
+				<a class="button center-block {{ showCareer ? '' : 'selected' }}" ng-click="experience.toggleCareer()" tabindex="0">(<span class="shortcut">2</span>) Education</a>
 			</nav>
-			<ul class="picker {{ experience.showCareer ? '' : 'hide' }}" tabindex="0">
-				<li class="{{ experience.career === 'infosec' ? 'selected' : '' }}">
+			<ul class="picker {{ showCareer ? '' : 'hide' }}" tabindex="0">
+				<li class="{{ career === 'infosec' ? 'selected' : '' }}">
 					<a ng-click="experience.selectCareer('infosec')" tabindex="-1">InfoSec Institute &mdash; Application Developer</a>
 				</li>
-				<li class="{{ experience.career === 'greatlakes' ? 'selected' : '' }}">
+				<li class="{{ career === 'greatlakes' ? 'selected' : '' }}">
 					<a ng-click="experience.selectCareer('greatlakes')" tabindex="-1">Great Lakes &mdash; Senior Programmer/Analyst</a>
 				</li>
-				<li class="{{ experience.career === 'luther' ? 'selected' : '' }}">
+				<li class="{{ career === 'luther' ? 'selected' : '' }}">
 					<a ng-click="experience.selectCareer('luther')" tabindex="-1">Luther College &mdash; Help Desk Technician</a>
 				</li>
-				<li class="{{ experience.career === 'wisdoc' ? 'selected' : '' }}">
+				<li class="{{ career === 'wisdoc' ? 'selected' : '' }}">
 					<a ng-click="experience.selectCareer('wisdoc')" tabindex="-1">Wisconsin Dept of Corrections &mdash; Intern</a>
 				</li>
-				<li class="{{ experience.career === 'selfemp' ? 'selected' : '' }}">
+				<li class="{{ career === 'selfemp' ? 'selected' : '' }}">
 					<a ng-click="experience.selectCareer('selfemp')" tabindex="-1">Anne Lyttle &mdash; Music Instructor</a>
 				</li>
 			</ul>
 		</div>
-		<section class="width-single {{ experience.showCareer ? '' : 'hide' }} titled">
+		<section class="width-single {{ showCareer ? '' : 'hide' }} titled">
 			<header>
 				<h2>Career</h2>
 			</header>
 			<div class="scrollable">
-				<div class="{{ experience.career === 'infosec' ? '' : 'hide' }}">
+				<div class="{{ career === 'infosec' ? '' : 'hide' }}">
 					<h3>InfoSec Institute, Application Developer</h3> Madison, WI (May 2015 - April 2016)
 					<p>I worked with a small agile team doing rapid development on a LAMP stack application that provides peer assessment and practice questions for I.T. professionals studying for certification exams. Upon joining the team I quickly familiarized myself with PHP, having no prior experience, and began contributing immediately as a front-end/back-end developer. In a short time I helped migrate the user interface from static server-rendered pages to highly reusable and modular React components, introduced e-commerce and implemented a paywall around key features, and mentored and pair-programmed with colleagues to increase knowledge across all layers of the application.
 				</div>
 
-				<div class="{{ experience.career === 'greatlakes' ? '' : 'hide' }}">
+				<div class="{{ career === 'greatlakes' ? '' : 'hide' }}">
 					<h3>Great Lakes Higher Education Corp., Senior Programmer/Analyst</h3> Madison, WI (May 2008 - May 2015)
 					<p>As a technical lead on a development team, I performed thorough analysis and developed quality, maintainable software with special attention to performance, security, and ADA/usability standards.  I provided direction on architecture and coding decisions, mentored new developers, managed tasks and timelines, and introduced new tools and technologies.  I helped build and deliver a highly complex one-page web interface that enabled our call center staff to provide excellent, consistent customer service. I honed my technical and personal skills on a variety of other projects including external-facing websites and reporting applications.  
 				</div>
 
-				<div class="{{ experience.career === 'luther' ? '' : 'hide' }}">
+				<div class="{{ career === 'luther' ? '' : 'hide' }}">
 					<h3>Luther College, Help Desk Technician</h3> Decorah, IA (August 2005 - May 2008)
 					<p>I provided quality customer service to students and academic and administrative staff needing assistance with computers or other equipment.  I researched and solved problems, documented steps and solutions, and helped inexperienced users learn and become comfortable with technology.
 				</div>
 
-				<div class="{{ experience.career === 'wisdoc' ? '' : 'hide' }}">
+				<div class="{{ career === 'wisdoc' ? '' : 'hide' }}">
 					<h3>Wisconsin Department of Corrections, Intern</h3>  Madison, WI (May 2007 - August 2007)
 					<p>With little direction, I familiarized myself with business intelligence software and used it to develop reports that were used by management to improve efficiency in their teams.
 				</div>
 
-				<div class="{{ experience.career === 'selfemp' ? '' : 'hide' }}">
+				<div class="{{ career === 'selfemp' ? '' : 'hide' }}">
 					<h3>Anne Lyttle, Music Instructor</h3>  Marion, IA (September 2002 - August 2004)
 					<p>I taught lessons to beginner violin and viola students.
 				</div>
 			</div>
 		</section>
-		<section data-name="education" class="width-single {{ experience.showCareer ? 'hide' : '' }} titled">
+		<section data-name="education" class="width-single {{ showCareer ? 'hide' : '' }} titled">
 			<header>
 				<h2>Education</h2>
 			</header>

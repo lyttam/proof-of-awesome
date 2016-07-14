@@ -1,14 +1,16 @@
 /* @ngInject */
-export default function ExperienceController($scope, $element, $attrs) {
-	let vm = this;
-	vm.showCareer = true;
-	vm.career = 'infosec';
+export default function ExperienceController($scope) {
+	$scope.showCareer = true;
+	$scope.career = 'infosec';
 
-	vm.toggleCareer = (show) => {
-		vm.showCareer = show ? true : false;
+	this.toggleCareer = (show) => {
+		$scope.showCareer = show ? true : false;
+		console.log(vm);
 	}
 
-	vm.selectCareer = (career) => {
-		vm.career = career;
+	this.selectCareer = (career) => {
+		$scope.career = career;
 	}
+
+
 };

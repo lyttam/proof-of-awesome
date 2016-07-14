@@ -4,11 +4,7 @@ import ExperienceController from './experience.controller';
 let experienceComponent = {
 	template,
 	controller: ['$scope', ExperienceController],
-	controllerAs: 'experience',
-	bindings: {
-		showCareer: '@',
-		career: '@'
-	}
+	controllerAs: 'experience'
 };
 
 export default experienceComponent;

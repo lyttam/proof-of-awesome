@@ -3,10 +3,6 @@ import uirouter from 'angular-ui-router';
 import 'babel-polyfill';
 import Components from './components/components';
 import AppComponent from './app.component';
-import homeTemplate from './components/home/home.html';
-import experienceTemplate from './components/experience/experience.html';
-import skillTemplate from './components/skill/skill.html';
-import contactTemplate from './components/contact/contact.html';
 import './styles/img/8bit-linkedin.png';
 import './styles/img/8bit-gmail.png';
 import './styles/img/8bit-github.png';
@@ -35,7 +31,7 @@ const app = angular.module('app', [
 			})
 			.state('experience', {
 				url: '/experience',
-				component: 'experience'
+				component: 'experience',
 			})
 			.state('skill', {
 				url: '/skill',
@@ -46,7 +42,5 @@ const app = angular.module('app', [
 				component: 'contact'
 			});
 	}])
-
-//	.value('$routerRootComponent', 'app')
 
 	.component('app', AppComponent);
