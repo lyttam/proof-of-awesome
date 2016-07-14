@@ -21,18 +21,18 @@ describe('app module', () => {
 		expect(element.html()).to.have.string('<div class="app">');
 		expect(element.html()).to.have.string('<nav-menu class="nav-menu ng-isolate-scope">');
 		
-		expect(element.html()).to.have.string('href="./"');
-		expect(element.html()).to.have.string('ng-link="[\'Home\']"');
+		expect(element.html()).to.have.string('href="#/"');
+		expect(element.html()).to.have.string('ui-sref="home"');
 //		expect(element.html()).to.have.string('href="./about/"');
-//		expect(element.html()).to.have.string('ng-link="[\'About\']"');
-		expect(element.html()).to.have.string('href="./experience/"');
-		expect(element.html()).to.have.string('ng-link="[\'Experience\']"');
-		expect(element.html()).to.have.string('href="./skill/"');
-		expect(element.html()).to.have.string('ng-link="[\'Skill\']"');
-		expect(element.html()).to.have.string('href="./contact/"');
-		expect(element.html()).to.have.string('ng-link="[\'Contact\']"');
+//		expect(element.html()).to.have.string('ui-sref="[\'About\']"');
+		expect(element.html()).to.have.string('href="#/experience"');
+		expect(element.html()).to.have.string('ui-sref="experience"');
+		expect(element.html()).to.have.string('href="#/skill"');
+		expect(element.html()).to.have.string('ui-sref="skill"');
+		expect(element.html()).to.have.string('href="#/contact"');
+		expect(element.html()).to.have.string('ui-sref="contact"');
 	
-		expect(element.html()).to.have.string('<ng-outlet class="ng-scope"><home');
+		expect(element.html()).to.have.string('<ui-view class="ng-scope">');
 
 		expect(element.html()).to.have.string('<function-menu class="function-menu ng-isolate-scope">');
 	});
