@@ -3,28 +3,28 @@
 	<div class="window-content">
 		<div class="width-single">
 			<nav>
-				<a class="button center-block {{ showCareer ? 'selected' : '' }}" ng-click="experience.toggleCareer(true)" tabindex="0">(<span class="shortcut">1</span>) Career</a>
-				<a class="button center-block {{ showCareer ? '' : 'selected' }}" ng-click="experience.toggleCareer()" tabindex="0">(<span class="shortcut">2</span>) Education</a>
+				<a class="button center-block {{ mode === 'career' ? 'selected' : '' }}" data-mode="career" accesskey="1" ng-click="experience.setMode('career')" tabindex="0">(<span class="shortcut">1</span>) Career</a>
+				<a class="button center-block {{ mode === 'career' ? '' : 'selected' }}" data-mode="education" accesskey="2" ng-click="experience.setMode('education')" tabindex="0">(<span class="shortcut">2</span>) Education</a>
 			</nav>
-			<ul class="picker {{ showCareer ? '' : 'hide' }}" tabindex="0">
-				<li class="{{ career === 'infosec' ? 'selected' : '' }}">
-					<a ng-click="experience.selectCareer('infosec')" tabindex="-1">InfoSec Institute &mdash; Application Developer</a>
+			<ul class="picker {{ mode === 'career' ? '' : 'hide' }}" id="career-picker" tabindex="0">
+				<li class="{{ career === 'infosec' ? 'selected' : '' }}" data-career="infosec">
+					<a ng-click="experience.setCareer('infosec')" tabindex="-1">InfoSec Institute &mdash; Application Developer</a>
 				</li>
-				<li class="{{ career === 'greatlakes' ? 'selected' : '' }}">
-					<a ng-click="experience.selectCareer('greatlakes')" tabindex="-1">Great Lakes &mdash; Senior Programmer/Analyst</a>
+				<li class="{{ career === 'greatlakes' ? 'selected' : '' }}" data-career="greatlakes">
+					<a ng-click="experience.setCareer('greatlakes')" tabindex="-1">Great Lakes &mdash; Senior Programmer/Analyst</a>
 				</li>
-				<li class="{{ career === 'luther' ? 'selected' : '' }}">
-					<a ng-click="experience.selectCareer('luther')" tabindex="-1">Luther College &mdash; Help Desk Technician</a>
+				<li class="{{ career === 'luther' ? 'selected' : '' }}" data-career="luther">
+					<a ng-click="experience.setCareer('luther')" tabindex="-1">Luther College &mdash; Help Desk Technician</a>
 				</li>
-				<li class="{{ career === 'wisdoc' ? 'selected' : '' }}">
-					<a ng-click="experience.selectCareer('wisdoc')" tabindex="-1">Wisconsin Dept of Corrections &mdash; Intern</a>
+				<li class="{{ career === 'wisdoc' ? 'selected' : '' }}" data-career="wisdoc">
+					<a ng-click="experience.setCareer('wisdoc')" tabindex="-1">Wisconsin Dept of Corrections &mdash; Intern</a>
 				</li>
-				<li class="{{ career === 'selfemp' ? 'selected' : '' }}">
-					<a ng-click="experience.selectCareer('selfemp')" tabindex="-1">Anne Lyttle &mdash; Music Instructor</a>
+				<li class="{{ career === 'selfemp' ? 'selected' : '' }}" data-career="selfemp">
+					<a ng-click="experience.setCareer('selfemp')" tabindex="-1">Anne Lyttle &mdash; Music Instructor</a>
 				</li>
 			</ul>
 		</div>
-		<section class="width-single {{ showCareer ? '' : 'hide' }} titled">
+		<section class="width-single {{ mode === 'career' ? '' : 'hide' }} titled">
 			<header>
 				<h2>Career</h2>
 			</header>
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 		</section>
-		<section data-name="education" class="width-single {{ showCareer ? 'hide' : '' }} titled">
+		<section data-name="education" class="width-single {{ mode === 'career' ? 'hide' : '' }} titled">
 			<header>
 				<h2>Education</h2>
 			</header>

@@ -3,7 +3,7 @@ import ExperienceController from './experience.controller';
 
 let experienceComponent = {
 	template,
-	controller: ['$scope', ExperienceController],
+	controller: ['$scope', '$element', ExperienceController],
 	controllerAs: 'experience'
 };
 

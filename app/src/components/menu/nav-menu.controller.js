@@ -1,4 +1,3 @@
-import angular from 'angular';
 import { bind } from 'mousetrap';
 
 export default function NavMenuController($element, $state) {
