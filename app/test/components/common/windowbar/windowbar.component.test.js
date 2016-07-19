@@ -9,19 +9,24 @@ describe('windowbar component', () => {
 
 	describe('windowbarController', () => {
 		var $componentController,
+			element,
 			$scope;
 
 		beforeEach(angular.mock.inject(($rootScope, _$componentController_) => {
 			$scope = $rootScope.$new();
+			element = angular.element('<windowbar title="Skill" class="ng-isolate-scope"><header><a ui-sref="home" tabindex="0" href="#/">-</a><h1 class="window-title ng-binding">Skill</h1><span></span></header></windowbar>');
 			$componentController = _$componentController_;
 		}));
 
 		it('sets the title', () => {
 			component = $componentController(
 					'windowbar',
-					{title: 'test'},
-					{title: 'test'});
-			console.log(component);
+					{
+						$scope: {
+							windowbar: {title: 'test'}
+						},
+						$element: element
+					});
 			expect(component.title).to.equal('test');
 		});
 	});

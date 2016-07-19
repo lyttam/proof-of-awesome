@@ -3,7 +3,7 @@ import WindowbarController from './windowbar.controller';
 
 let windowbarComponent = {
 	template,
-	controller: ['$scope', WindowbarController],
+	controller: ['$scope', '$element', WindowbarController],
 	controllerAs: 'windowbar',
 	bindings: {
 		title: '@'
