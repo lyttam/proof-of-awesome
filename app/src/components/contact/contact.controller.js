@@ -3,16 +3,26 @@ export default function ContactController($element) {
 		let focusables = $element[0].querySelectorAll('ul.social-media a, ul.social-media input');
 
 		for (let i = 0; i < focusables.length; i++) {
-			focusables[i].onfocusin = this.displayFocusableContainer;
-			if (focusables[i].addEventListener) {
-				focusables[i].addEventListener('focus', this.displayFocusableContainer, true);
-				focusables[i].addEventListener('DOMFocusIn', this.displayFocusableContainer, true);
-			}
+			this.bindFocusInEvents(focusables[i]);
+			this.bindFocusOutEvents(focusables[i]);
 		}
+	};
+
+	this.bindFocusInEvents = (el) => {
+		el.onfocus = this.displayFocusableContainer;
+	};
+
+	this.bindFocusOutEvents = (el) => {
+		el.onblur = this.hideFocusableContainer;
 	};
 
 	this.displayFocusableContainer = (e) => {
 		let container = angular.element(e.target).parent();
 		container.addClass('visible');
+	};
+
+	this.hideFocusableContainer = (e) => {
+		let container = angular.element(e.target).parent();
+		container.removeClass('visible');
 	};
 };

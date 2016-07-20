@@ -9,7 +9,8 @@
     "build": "npm run clean && npm rebuild node-sass && npm install && npm run package",
     "test": "karma start --single-run",
     "startProd": "npm run build && npm run test && npm start",
-    "startDev": "npm run package && npm run test && npm start"
+    "startDev": "npm run package && npm run test && npm start",
+    "deploy": "cp -R /vagrant/dist/* /var/www/html/annelyttle.com/public_html/"
   },
   "repository": {
     "type": "git",
