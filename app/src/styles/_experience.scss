@@ -1,0 +1,30 @@
+experience {
+	.window-container { 
+		min-height: 360px;
+	
+		.window-content {
+			@include flexbox();
+
+			nav {
+				height: 7rem;
+				padding: 3rem 0 2rem 0;
+
+				a.button {
+					max-width: 20rem;
+				}
+			}
+
+			section.titled>div {
+				height: 19rem;
+
+				h3 {
+					@include text-format(1rem, 700);
+				}
+
+				p {
+					@include text-format(0.75rem, 400);
+				}
+			}
+		}
+	}
+}

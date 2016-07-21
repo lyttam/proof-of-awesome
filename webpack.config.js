@@ -18,7 +18,7 @@ module.exports = {
    	    	{ test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel' },
    	    	{ test: /\.html$/, loader: 'raw' },
 			{ 
-				test: /\.(eot|svg|ttf|woff|woff2)\?56386607$/, 
+				test: /\.(eot|svg|ttf|woff|woff2)\?75628165$/, 
 				loader: 'file', 
 				query: { name: '[name].[ext]' }
 			},

@@ -1,0 +1,47 @@
+body .app .picker {
+	position: relative;
+
+	ul {
+		color: $color-secondary-lightest;
+		border: 4px double $color-primary-lightest;
+		margin: 1rem;
+		padding: .3rem .2rem;
+		display: block;
+
+		li {
+			&.selected {
+				background-color: $color-secondary-darkest;
+			}
+
+			a {
+				font-weight: 400;
+				padding: 0 1rem;
+				letter-spacing: .1rem;
+				line-height: 1.2rem;
+			}
+		}
+	}
+
+	.controls {
+		height: 4.6rem;
+		width: 1rem;
+		position: absolute;
+		background-color: $color-secondary-light;
+		top: 18%;
+		left: 94.7%;
+
+		>div {
+			position: relative;
+
+			i {
+				position: absolute;
+				left: -.21rem;
+				color: $color-secondary-darkest;
+
+				&.down {
+					top: 3.6rem;
+				}
+			}
+		}
+	}
+}

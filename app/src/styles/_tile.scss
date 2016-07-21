@@ -61,8 +61,9 @@ body .app {
 		}
 	}
 
-	.logo-tiles {
+	section.titled .logo-tiles {
 		background-color: $color-secondary-light;
+		padding: .5rem;
 		
 		tile {
 			width: 3.5rem;

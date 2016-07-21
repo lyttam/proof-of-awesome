@@ -41,6 +41,18 @@
       "css": "folder-open-empty",
       "code": 62658,
       "src": "mfglabs"
+    },
+    {
+      "uid": "8ax1xqcbzz1hobyd4i7f0unwib1bztip",
+      "css": "down-dir",
+      "code": 59394,
+      "src": "modernpics"
+    },
+    {
+      "uid": "6ipws8y9gej6vbloufvhi5qux7rluf64",
+      "css": "up-dir",
+      "code": 59395,
+      "src": "modernpics"
     }
   ]
 }

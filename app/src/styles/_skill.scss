@@ -1,0 +1,25 @@
+skill {
+	.window-container {
+		min-height: 430px;
+
+		.window-content {
+			section {
+				width: 98%;
+				display: block;
+			}
+
+			ul {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				color: $color-secondary-dark;
+				background-color: $color-primary-light;
+
+				li.expander {
+					width: 18rem;
+					margin: 1rem 0;
+				}
+			}
+		}
+	}
+}

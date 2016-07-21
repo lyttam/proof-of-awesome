@@ -3,7 +3,13 @@
 @import 'layout';
 @import 'menu';
 @import 'windowbar';
-@import 'images';
+@import 'tile';
+@import 'home';
+@import 'experience';
+@import 'skill';
+@import 'style-library';
+@import 'picker';
+@import 'expander';
 
 body {
 	background-color: $color-secondary-dark;
@@ -87,7 +93,7 @@ body {
 			}
 		}
 		
-		section, ul.picker {
+		section {
 			border: 2px solid $color-primary-lightest;
 			margin: 1rem;
 			display: inline-block;
@@ -113,7 +119,7 @@ body {
 					}
 				}
 
-				>div, ul {
+				>div, >ul {
 					padding: .5rem 1rem;
 					border: 2px solid $color-primary-lightest;
 					border-top: none;
@@ -125,101 +131,11 @@ body {
 		ul {
 			list-style: none;
 			padding: 0 0 0 .8rem;
-
-			&.picker {
-				color: $color-secondary-lightest;
-
-				li {
-					&.selected {
-						background-color: $color-secondary-darkest;
-					}
-
-					a {
-						font-weight: 400;
-						padding: 0 1rem;
-						letter-spacing: .1rem;
-						line-height: 1.2rem;
-					}
-				}
-			}
 		}
 
 		banner {
 			display: block;
 			margin: 1rem 0 5%;
-		}
-
-		home {
-			>div {
-				width: 80%;
-				min-width: 950px;
-				background: $color-primary-dark;
-			}
-		}
-
-		experience {
-			.window-container { 
-				min-height: 360px;
-			
-				.window-content {
-					@include flexbox();
-
-					nav {
-						height: 7rem;
-						padding: 2rem 0 1rem 0;
-
-						a.button {
-							max-width: 20rem;
-						}
-					}
-
-					ul.picker {
-						height: 9rem;
-						display: block;
-					}
-
-					section.titled>div {
-						height: 16.8rem;
-					}
-				}
-			}
-		}
-
-		skill {
-			.window-container {
-				min-height: 430px;
-
-				.window-content {
-					section {
-						width: 98%;
-						display: block;
-					}
-
-					ul {
-						display: flex;
-						justify-content: space-around;
-						flex-wrap: wrap;
-						color: $color-secondary-dark;
-						background-color: $color-primary-light;
-
-						li.expander {
-							width: 18rem;
-							margin: 1rem 0;
-						}
-					}
-				}
-			}
-		}
-
-		style-library {
-			.window-container .window-content {
-				@include flexbox();
-				flex-wrap: wrap;
-
-				.expander {
-					height: 80px;
-				}
-			}
 		}
 
 		footer {
@@ -257,62 +173,6 @@ body {
 			&::-webkit-scrollbar-thumb {
 				background-color: $color-secondary-light;
 				border: .1rem solid $color-secondary-dark;
-			}
-		}
-
-		.expander {
-			position: relative;
-			
-			.toggle {
-				cursor: pointer;
-
-				h3 {
-					@include text-format(1.2rem, 400);
-					display: inline-block;
-					position: absolute;
-					top: 0;
-					left: 3rem;
-					margin: 0;
-					line-height: 2rem;
-				}
-
-				i {
-					font-size: 1.5rem
-				}
-
-				.closed {
-					position: relative;
-					display: inline-block;
-				}
-
-				.open {
-					@include hidden();
-
-					>div {
-						@include opacity(.9);
-						@include text-format(.8rem, 400);
-						position: fixed;
-						z-index: 100;
-						background-color: $color-secondary-darkest;
-						color: $color-tertiary;
-						padding: .5rem 1rem;
-						margin: 0 2.3rem;
-						width: 400px;
-					}
-				}
-
-				&:hover, &:focus {
-					.closed {
-						@include hidden();
-					}
-
-					.open {
-						position: relative;
-						top: 0;
-						left: 0;
-						display: inline-block;
-					}	
-				}
 			}
 		}
 

@@ -1,0 +1,55 @@
+body .app .expander {
+	position: relative;
+	
+	.toggle {
+		cursor: pointer;
+
+		h3 {
+			@include text-format(1.2rem, 400);
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 3rem;
+			margin: 0;
+			line-height: 2rem;
+		}
+
+		i {
+			font-size: 1.5rem
+		}
+
+		.closed {
+			position: relative;
+			display: inline-block;
+		}
+
+		.open {
+			@include hidden();
+
+			>div {
+				@include opacity(.9);
+				@include text-format(.8rem, 400);
+				position: fixed;
+				z-index: 100;
+				background-color: $color-secondary-darkest;
+				color: $color-tertiary;
+				padding: .5rem 1rem;
+				margin: 0 2.3rem;
+				width: 400px;
+			}
+		}
+
+		&:hover, &:focus {
+			.closed {
+				@include hidden();
+			}
+
+			.open {
+				position: relative;
+				top: 0;
+				left: 0;
+				display: inline-block;
+			}	
+		}
+	}
+}

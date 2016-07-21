@@ -1,0 +1,10 @@
+style-library {
+	.window-container .window-content {
+		@include flexbox();
+		flex-wrap: wrap;
+
+		.expander {
+			height: 80px;
+		}
+	}
+}
