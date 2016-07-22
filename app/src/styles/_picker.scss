@@ -10,7 +10,11 @@ body .app .picker {
 
 		li {
 			&.selected {
-				background-color: $color-secondary-darkest;
+				background-color: $color-secondary-dark;
+			}
+
+			&:hover {
+				background-color: $color-secondary-dark;
 			}
 
 			a {
@@ -18,6 +22,13 @@ body .app .picker {
 				padding: 0 1rem;
 				letter-spacing: .1rem;
 				line-height: 1.2rem;
+				display: block;
+			}
+		}
+
+		&:focus, &:hover {
+			li.selected {
+				background-color: $color-secondary-darkest;
 			}
 		}
 	}

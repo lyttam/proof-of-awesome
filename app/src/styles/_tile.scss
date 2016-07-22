@@ -45,6 +45,10 @@ body .app {
 		flex-wrap: wrap;
 		justify-content: space-around;
 
+		:focus {
+			outline: none;
+		}
+
 		tile {
 			position: relative;
 
@@ -141,7 +145,7 @@ body .app {
 					color: $color-tertiary;
 				}
 
-				&:hover, &:active {
+				&:hover, &:active, &:focus {
 					color: $color-tertiary-light;
 				}
 

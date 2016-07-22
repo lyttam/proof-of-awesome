@@ -11,10 +11,11 @@ menu {
 
 .nav-menu > menu {
 	height: 2rem;
+	padding: .3rem;
 	
 	nav a {
 		@include menu-item($color-primary, $color-secondary-dark, $color-secondary);
-		padding: .5rem 1rem;
+		padding: .4rem .8rem;
 		font-size: 1rem;
 		letter-spacing: .2rem;
 	}

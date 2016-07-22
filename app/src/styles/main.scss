@@ -17,6 +17,10 @@ body {
 	font-family: monospace;
 	margin: 0;
 
+	:focus {
+		outline: 1px dotted $color-secondary-darkest;
+	}
+
 	.app {
 		margin: 0 1rem;
 		position: relative;
@@ -46,11 +50,13 @@ body {
 				background: $color-primary-light;
 			}
 
-			&:hover, :focus {
-				.focus {
-					padding: .2rem 2rem;
-					display: inline;
-					border: 1px dotted $color-secondary-darkest;
+			>div {
+				padding: .2rem 2rem;
+			}
+
+			&:hover, &:focus {
+				>div {
+					outline: 1px dotted $color-secondary-darkest;
 				}
 			}
 		}
@@ -76,8 +82,8 @@ body {
 
 		pre {
 			&.banner {
-				font-size: 14px;
-				line-height: 1.3rem;
+				font-size: 14.5px;
+				line-height: 1rem;
 				letter-spacing: 0.1rem;
 				font-weight: 700;
 				color: $color-tertiary-light;

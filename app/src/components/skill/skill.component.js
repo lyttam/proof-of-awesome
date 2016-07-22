@@ -1,8 +1,9 @@
 import template from './skill.html';
+import SkillController from './skill.controller';
 
 let skillComponent = {
-	restrict: 'E',
-	template
+	template,
+	controller: ['$element', SkillController]
 };
 
 export default skillComponent;

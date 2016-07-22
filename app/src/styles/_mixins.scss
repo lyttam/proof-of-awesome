@@ -18,7 +18,7 @@
 		color: $inactiveColor;
 	}
 
-	&:active, &:hover {
+	&:active, &:hover, &:focus {
 		color: $activeColor;
 	}
 }

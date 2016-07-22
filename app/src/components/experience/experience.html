@@ -3,8 +3,12 @@
 	<div class="window-content">
 		<div class="width-single">
 			<nav>
-				<a class="button center-block {{ mode === 'career' ? 'selected' : '' }}" data-mode="career" accesskey="1" ng-click="experience.setMode('career')" tabindex="0">(<span class="shortcut">1</span>) Career</a>
-				<a class="button center-block {{ mode === 'career' ? '' : 'selected' }}" data-mode="education" accesskey="2" ng-click="experience.setMode('education')" tabindex="0">(<span class="shortcut">2</span>) Education</a>
+				<a class="button center-block {{ mode === 'career' ? 'selected' : '' }}" data-mode="career" accesskey="1" ng-click="experience.setMode('career')" tabindex="0">
+					<div>(<span class="shortcut">1</span>) Career</div>
+				</a>
+				<a class="button center-block {{ mode === 'career' ? '' : 'selected' }}" data-mode="education" accesskey="2" ng-click="experience.setMode('education')" tabindex="0">
+					<div>(<span class="shortcut">2</span>) Education</div>
+				</a>
 			</nav>
 			<div class="picker {{ mode === 'career' ? '' : 'hide' }}">
 				<ul id="career-picker" tabindex="0">
@@ -26,8 +30,8 @@
 				</ul>
 				<div class="controls">
 					<div>
-						<i class="up icon-up-dir"></i>
-						<i class="down icon-down-dir"></i>
+						<a ng-click="experience.selectPrevCareer()"><i class="up icon-up-dir"></i></a>
+						<a ng-click="experience.selectNextCareer()"><i class="down icon-down-dir"></i></a>
 					</div>
 				</div>
 			</div>
