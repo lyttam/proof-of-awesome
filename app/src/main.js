@@ -2,6 +2,7 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import 'babel-polyfill';
 import Components from './components/components';
+import CommonComponents from './components/common/components';
 import AppComponent from './app.component';
 import './styles/img/8bit-linkedin.png';
 import './styles/img/8bit-gmail.png';
@@ -18,6 +19,7 @@ const app = angular.module('app', [
 		'skill',
 		'contact',
 		'functionMenu',
+		'clock',
 		'styleLibrary'
 	])
 

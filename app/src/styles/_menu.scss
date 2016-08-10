@@ -22,7 +22,9 @@ menu {
 }
 
 .function-menu > menu {
+	display: inline-block;
 	height: 2.3rem;
+	width: 50%;
 	margin: 0;
 
 	nav a {
